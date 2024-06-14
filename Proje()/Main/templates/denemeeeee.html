@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoğraf Yükle</title>
+</head>
+<body>
+    <h1>Fotoğraf Yükle</h1>
+    <form action="/background" method="POST" enctype="multipart/form-data">
+        <label for="a">Fotoğrafı Seçin:</label>
+        <input type="file" name="a" id="a" accept="image/*" required><br><br>
+        <input type="submit" value="Yükle">
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    {% if file %}
+        <h2>İşlenmiş Resim</h2>
+        <img src="{{ file }}" alt="Processed Image">
+    {% endif %}
+</body>
+</html>

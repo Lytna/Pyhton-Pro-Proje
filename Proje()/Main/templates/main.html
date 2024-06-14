@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programcının günlüğü</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="../static/img/logo.svg" alt="logo" width="30" height="30">
+        <ul class="main-list">
+
+        </ul>
+      </header>
+      <main class="main-login">
+        {% block content %}
+        <a href="/index" class="form__a">Günlük</a>
+        <a href="/summary" class="form__a">Özet Çıkartma</a>
+        <a href="/background" class="form__a">Arka Plan Kaldırma</a>
+        {% endblock %}
+      </main>
+</body>
+</html>

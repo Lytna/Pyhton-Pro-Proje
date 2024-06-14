@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programcının kütüphanesi</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="/main"><img src="../static/img/logo.svg" alt="logo" width="30" height="30">
+        </a>
+        <ul class="main-list">
+            <li class="list__item">
+                <a href="{{url_for('logout')}}">
+                    <img src="../static/img/login.svg" alt="login" width="20" height="20">
+                </a>
+                
+        </ul>
+      </header>
+      <main>
+        {% block content %}
+        <form method="POST" class="creat-form">
+            <div class="form__card">
+                
+                <div class="form__inputs">
+                    <label for="title">
+            
+                    </label>
+                </div>
+                
+                <label for="text">
+                    <textarea class="form__text" name="text" id="text" cols="30" rows="10" required placeholder="Biraz metin yazın...">{{a}}</textarea>
+                </label>
+                <p>Kaç Cümle Olsun ?</p>
+                <input class='form__inputsum'type="text" name="b" id="b">
+                <button class="form__button">Özeti Çıkar</button>
+                
+                <div class="form__text">
+                    <p>{{ summary }}</p>
+                </div>
+            </div>
+        </form>
+        
+        {% endblock %}
+      </main>
+</body>
+</html>
