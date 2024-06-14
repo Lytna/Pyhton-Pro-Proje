@@ -216,9 +216,7 @@ ul {
     outline: -webkit-focus-ring-color auto 5px;
 }
 
-.form__button {
-    display: none; /* Yükle butonunu başlangıçta gizle */
-}
+
 
 .image-preview {
     display: none;
