@@ -5,3 +5,4 @@
 3- Metin özeti projesi yapılacak
 4- Discord İle entegrasyon yapılacak
 5- Birkaç mini proje eklenecek
+6- API pokemon eklencek
