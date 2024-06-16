@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #0F172A;        /* izleyici bölgesinin rengi */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: rgba(30, 41, 59, 0.4);    /* kaydırma çubuğunun rengi */
+    border-radius: 20px;       /* kaydırma çubuğunun yuvarlaklığı */
+    border: none;
+  }
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #0F172A;
+    color: #F8FAFC;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+
+img {
+    object-fit: contain;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 2%;
+    margin-bottom: 30px;
+}
+
+.main-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.main__title {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.cards-list {
+    display: flex;
+    padding: 0 5%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    column-gap: 50px;
+    justify-content: center;
+}
+
+.card {
+    width: 350px;
+    height: 500px;
+    transition: 0.2s;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.card__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+}
+
+.card__text {
+    border-top: 1px solid rgba(14, 165, 233, 1);
+    width: inherit;
+    display: flex;
+    padding: 50px 0 20px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.card__title {
+    padding: 0 20px;
+    text-align: center;
+}
+.card__subtitle {
+    padding: 0 20px;
+    text-align: center;
+
+}
+
+.card__img {
+    padding: 30px;
+}
+
+.creat__link {
+    display: block;
+    width: inherit;
+    height: inherit;
+    background: url(../img/plus.svg) no-repeat;
+    background-size: 200px 200px;
+    background-position: center;
+}
+
+.card--creat:hover,
+.card:hover {
+    box-shadow: 0px 4px 10px rgba(14, 165, 233, 1);
+}
+
+.creat-form {
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.form__card {
+    width: 40%;
+    padding: 0 20px 20px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form__inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.form__inputs label {
+    width: 80%;
+}
+
+.form__input {
+    background: #0F172A;
+    border-radius: 10px;
+    padding: 10px;
+    height: 30px;
+    color: #F8FAFC;
+    font: inherit;
+    border: none;
+    width: 94%;
+}
+
+.form__inputsum {
+    background: #0F172A;
+    border-radius: 10px;
+    padding: 10px;
+    height: 30px;
+    color: #F8FAFC;
+    font: inherit;
+    border: none;
+    width: 20%;
+}
+
+.form__input[type="file"] {
+    display: none;
+}
+
+.form__input[type="file"] + label {
+    display: inline-block;
+    background-color: #0F172A;
+    color: rgba(14, 165, 233, 1);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid rgba(14, 165, 233, 1);
+    transition: background-color 0.2s, color 0.2s;
+    text-align: center;
+    width: 100%;
+}
+
+.form__input[type="file"] + label:hover {
+    background-color: rgba(14, 165, 233, 1);
+    color: #F8FAFC;
+}
+
+.form__input[type="file"]:focus + label {
+    outline: 2px solid rgba(14, 165, 233, 1);
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+.image-preview {
+    display: none;
+    margin-top: 20px;
+    max-width: 100%;
+    max-height: 300px;
+}
+
+
+.processed-image-container {
+    display: flex; /* Görüntü kapsayıcısını esnek yap */
+    justify-content: center; /* Yatay olarak ortala */
+    align-items: center; /* Dikey olarak ortala */
+    height: 100vh; /* Kapsayıcının yüksekliğini tam ekran yap */
+}
+
+.messages {
+    display: none; /* Flash mesajları gizle */
+}
+
+
+
+.label-custom {
+    display: inline-block;
+    background-color: #0F172A;
+    color: rgba(14, 165, 233, 1);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid rgba(14, 165, 233, 1);
+    transition: background-color 0.2s, color 0.2s;
+    text-align: center;
+    width: 100%;
+    
+}
+
+
+
+.label-custom:hover {
+    background-color: rgba(14, 165, 233, 1);
+    color: #F8FAFC;
+}
+
+.label-custom:focus {
+    outline: 2px solid rgba(14, 165, 233, 1);
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+
+
+
+.processed-image-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.processed-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+
+.image-preview {
+    display: none;
+    margin-top: 20px;
+    max-width: 100%;
+    max-height: 300px;
+}
+
+
+.form__buttonimg {
+
+    display: none;/* Yükle butonunu başlangıçta gizle */
+    border: 1px solid rgba(14, 165, 233, 1);
+    background: #0F172A;
+    border-radius: 10px;
+    color: rgba(14, 165, 233, 1);
+    padding: 10px;
+    font: inherit;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+} 
+
+.form__buttonimg:hover {
+    color: #F8FAFC;
+    background:  rgba(14, 165, 233, 1);
+}
+
+.image-preview {
+    display: none;
+    margin-top: 20px;
+    max-width: 100%;
+    max-height: 300px;
+}
+
+
+.form__card label {
+    width: 80%;
+}
+
+.form__text {
+    background: #0F172A;
+    border-radius: 10px;
+    padding: 10px;
+    color: #F8FAFC;
+    font: inherit;
+    border: none;
+    width: 94%;
+}
+
+.form__button {
+    border: 1px solid rgba(14, 165, 233, 1);
+    background: #0F172A;
+    border-radius: 10px;
+    color: rgba(14, 165, 233, 1);
+    padding: 10px;
+    font: inherit;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form__button:hover {
+    color: #F8FAFC;
+    background:  rgba(14, 165, 233, 1);
+}
+
+.main {
+    padding: 0 5%;
+}
+
+.main__block {
+    margin: auto;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+
+.main__blockimg {
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.centered__div {
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* h2 ve img'nin içeriğini ortalar */
+}
+
+.main__subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main__text {
+    line-height: 30px;
+    margin-bottom: 40px;
+    white-space: pre-wrap;
+    align-self: flex-start;
+}
+
+.main__link {
+    display: block;
+    border: 1px solid rgba(14, 165, 233, 1);
+    background: #0F172A;
+    border-radius: 10px;
+    color: rgba(14, 165, 233, 1);
+    padding: 15px 10px;
+    font: inherit;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.main__link:hover {
+    color: #F8FAFC;
+    background:  rgba(14, 165, 233, 1);
+}
+
+
+.main-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login {
+    width: 30%;
+    padding: 50px 30px;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.login label {
+    width: 60%;
+}
+
+
+.reg__link {
+    height: fit-content;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.error {
+    font-size: 10px;
+    color: #fff;
+}
+
+.login__link:hover {
+    color: rgba(14, 165, 233, 1);
+}
+
+.link-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.form__b {
+    margin-right: 10px; /* Adjust margin between links as needed */
+    margin-bottom: 5px; /* Adjust margin below each link as needed */
+}
+
+.link-group {
+    display: inline;
+    justify-content: space-between; /* Bağlantıları aralarında eşit boşluk bırakarak yan yana sıralar */
+    margin-bottom: 10px; /* Gruplar arası alt boşluk */
+}
+
+.link-group a {
+    text-decoration: none; /* varsayılan alt çizgiyi kaldırmak için */
+    border: 1px solid rgba(14, 165, 233, 1);
+    background: #0F172A;
+    border-radius: 10px;
+    color: rgba(14, 165, 233, 1);
+    padding: 10px;
+    font: inherit;
+    width: 200px;
+    height: 50px;
+    line-height: 50px; /* dikey olarak ortalamak için */
+    text-align: center; /* yatay olarak ortalamak için */
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 18px; /* yazı boyutunu büyütmek için */
+}
+
+
+
+.form__a {
+    display: inline-block; /* a elementini blok düzeyine çekmek için */
+    text-decoration: none; /* varsayılan alt çizgiyi kaldırmak için */
+    border: 1px solid rgba(14, 165, 233, 1);
+    background: #0F172A;
+    border-radius: 10px;
+    color: rgba(14, 165, 233, 1);
+    padding: 10px;
+    font: inherit;
+    width: 200px;
+    height: 50px;
+    line-height: 50px; /* dikey olarak ortalamak için */
+    text-align: center; /* yatay olarak ortalamak için */
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 18px; /* yazı boyutunu büyütmek için */
+    margin: 5px; /* her buton arasında biraz boşluk bırakmak için */
+}
